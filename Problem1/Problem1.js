@@ -9,8 +9,14 @@ const getprimes = () =>{
   return new Promise((resolve,reject) => {
     const Numberdata =  axios.get('http://localhost:8090/primes')
     .then(result =>{
-      console.log(result.data.numbers);
-      resolve(result.data.numbers);
+      arr = result.data.numbers;
+      arr.sort(function(a, b) {
+        return a - b;
+      });
+
+      console.log("The arr is ",arr);
+      
+      resolve(arr);
       } )
       .catch(error => {
         console.log(error)
@@ -23,8 +29,13 @@ const getfibo = () =>{
   return new Promise((resolve,reject) => {
     const Numberdata =  axios.get('http://localhost:8090/fibo')
     .then(result =>{
-      console.log(result.data.numbers);
-      resolve(result.data.numbers);
+      arr = result.data.numbers;
+      arr.sort(function(a, b) {
+        return a - b;
+      })
+      console.log("The arr is ",arr);
+      
+      resolve(arr);
       } )
       .catch(error => {
         console.log(error)
@@ -37,8 +48,13 @@ const getodd = () =>{
   return new Promise((resolve,reject) => {
     const Numberdata =  axios.get('http://localhost:8090/fibo')
     .then(result =>{
-      console.log(result.data.numbers);
-      resolve(result.data.numbers);
+      arr = result.data.numbers;
+      arr.sort(function(a, b) {
+        return a - b;
+      })
+      console.log("The arr is ",arr);
+      
+      resolve(arr);
       } )
       .catch(error => {
         console.log(error)
